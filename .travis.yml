@@ -1,20 +1,19 @@
 language: python
 python:
-  - "3.6.1"
+    - "3.6.1"
 # cache folders:
 cache: pip
 # sudo permission:
 sudo: false
 # command to install dependencies
 install:
-  - "pip install -U pip"
-  - "pip install -r requirements.txt"
-  - "pip install coveralls"
-
+    - pip install -r requirements.txt
+    - pip install coveralls
 # command to run tests
 script:
-  - "py.test --cov=backend/"
-
+    - python -m unittest discover backend/
+    - coverage run backend/test_tasks.py
+    - coverage report -m
 # command to run coverage
 after success:
-  - "coveralls"
+    - coveralls
