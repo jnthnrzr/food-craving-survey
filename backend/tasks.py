@@ -3,7 +3,10 @@
 
 def say_hello(name=None):
     """Say hello with or without name."""
-    return "Hello" if name is None else "Hello, {}".format(name)
+    if name == None:
+        return "Hello"
+    else:
+        return f"Hello, {name}"
 
 
 def say_greetings():
