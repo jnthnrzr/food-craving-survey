@@ -15,5 +15,5 @@ script:
     - coverage run backend/test_tasks.py
     - coverage report -m
 # command to run coverage
-after success:
+after_success:
     - coveralls
