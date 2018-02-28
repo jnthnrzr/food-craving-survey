@@ -1,17 +1,26 @@
 language: python
 python:
   - "3.6.1"
-# command to install dependencies
-install: "pip install -r requirements.txt"
-# cache folders:
-cache: pip
+  # cache folders:
+  cache: pip
 # sudo permission:
 sudo: false
+# command to install dependencies
+install:
+  - pip install -U pip
+  - pip install -r requirements.txt
+  - pip install coveralls
+
+before_script:
+  - pip install -r test_requirements.txt
+  - git clone https://github.com/jnthnrzr/food-craving-survey.git
+
+
 # command to run tests
 script:
-  - pytest --cov=backend/
+  - py.test --cov=backend/
+  - coverage report -m
 
 # command to run coverage
 after success:
-  - codecov
   - coveralls
