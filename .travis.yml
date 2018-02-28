@@ -3,9 +3,16 @@ python:
   - "3.6.1"
 # command to install dependencies
 install: "pip install -r requirements.txt"
+# cache folders:
+cache: pip
+# sudo permission:
+sudo: false
 # command to run tests
 script:
   - pytest
-#  - flake8
-#  - pydocstyle
-#  - pycodestyle
+  #  - flake8
+  #  - pydocstyle
+  #  - pycodestyle
+# command to run coverage
+after success:
+  - codecov
