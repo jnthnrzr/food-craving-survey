@@ -13,7 +13,7 @@ install:
 script:
     - python -m unittest discover backend/
     - coverage run backend/test_tasks.py
-    - coverage report -m
 # command to run coverage
 after_success:
     - coveralls
+    - codecov
