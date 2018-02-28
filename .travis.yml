@@ -9,10 +9,8 @@ cache: pip
 sudo: false
 # command to run tests
 script:
-  - pytest
-  #  - flake8
-  #  - pydocstyle
-  #  - pycodestyle
+  - pytest --cov=backend/
+
 # command to run coverage
 after success:
   - codecov
