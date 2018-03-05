@@ -9,9 +9,3 @@ class Trial(db.Model):
     session = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.Date, default=datetime.today())
 
-
-    def __repr__(self):
-        return f'<Participant {self.participant}, Session {self.session}>'
-
-    def get_id(self):
-        return self.id
