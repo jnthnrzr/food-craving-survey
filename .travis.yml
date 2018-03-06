@@ -8,9 +8,12 @@ cache:
     - $HOME/virtualenv/python3.6.1/lib/python3.6/site-packages
 # sudo permission:
 sudo: false
+services:
+  - postgresql
 # Upgrade pip if possible
 before_install:
   - pip install -U pip
+  - psql -c 'create database foodcravingsurvey;' -U postgres
 # command to install dependencies
 install:
     - pip install -r requirements.txt
