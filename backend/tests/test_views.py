@@ -1,5 +1,5 @@
 import unittest
-from backend.src import app
+from backend.app import app
 
 
 class TestViews(unittest.TestCase):

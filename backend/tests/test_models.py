@@ -2,8 +2,7 @@ from datetime import datetime
 from unittest import TestCase, main
 from unittest.mock import MagicMock
 
-from backend.src.models import Trial
-
+from backend.app.models import Trial
 
 class TestMockTrialModel(TestCase):
     @classmethod
