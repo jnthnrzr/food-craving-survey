@@ -5,23 +5,23 @@ for research.
 ## Setup
 - Ensure correct versions of [Python](https://docs.python.org/3/), and [pip](https://pip.pypa.io/en/stable/) 
 are installed:  
-  `python --version` --> Python 3.6.1  
-  `pip --version` --> pip 9.0.1 (python 3.6)
+  `$ python --version` --> Python 3.6.1  
+  `$ pip --version` --> pip 9.0.1 (python 3.6)
 - Install virtualenv for python3 (see [Documentation](https://virtualenv.pypa.io/en/stable/) for 
 details).
 - Download source directory:  
-`git clone https://github.com/jnthnrzr/food-craving-survey.git`
+`$ git clone https://github.com/jnthnrzr/food-craving-survey.git`
 - Activate the virtualenv (exact command depends on OS, so consult 
 documentation).
 - Install dependencies from requirements.txt:  
-`pip install -r requirements.txt`
-- Navigate to the source root directory:  
-`cd food-craving-survey`
+`$ pip install -r requirements.txt`
+- Navigate to the source directory for Python backend:  
+`$ cd food-craving-survey/`
 - Run the server:  
-`python run.py`
+`$ python run.py`
 
 ## Running Tests and Coverage 
 Using [py.test](https://docs.pytest.org/en/latest/) and [coverage](https://coverage.readthedocs.io/en/coverage-4.5.1/) from source 
 root directory:  
-`cd food-craving-survey`  
-`pytest --cov=./`
+`$ cd food-craving-survey/`  
+`$ pytest --cov=./`
