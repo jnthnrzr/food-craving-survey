@@ -13,10 +13,10 @@ services:
 # Upgrade pip if possible
 before_install:
   - pip install -U pip
-  - psql -c 'create database foodcravingsurvey;' -U postgres
+  - psql -c 'CREATE DATABASE foodcravingsurvey;' -U postgres
 # command to install dependencies
 install:
-    - pip install -r requirements.txt
+    - pip install -r backend/requirements.txt
 # command to run tests
 script:
     - py.test --cov=./
