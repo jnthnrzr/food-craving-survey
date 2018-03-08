@@ -1,4 +1,4 @@
-from . import app
+from backend.app import app
 
 
 @app.route('/')
