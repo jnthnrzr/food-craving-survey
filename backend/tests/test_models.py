@@ -1,10 +1,11 @@
+import unittest
 from datetime import datetime
-from unittest import TestCase, main
 from unittest.mock import MagicMock
 
-from backend.app.models import Trial
+from app.models import Trial
 
-class TestMockTrialModel(TestCase):
+
+class TestMockTrialModel(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         mock_trial = MagicMock(spec=Trial)
@@ -42,4 +43,4 @@ class TestMockTrialModel(TestCase):
 
 
 if __name__ == "__main__":
-    main()
+    unittest.main()
