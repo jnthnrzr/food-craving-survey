@@ -6,7 +6,7 @@ for research.
 - Ensure correct versions of [Python](https://docs.python.org/3/) and [pip](https://pip.pypa.io/en/stable/) 
 are installed:  
   `$ python --version` --> Python 3.6.1  
-  `$ pip --version` --> pip 9.0.1 (python 3.6)
+  `$ pip --version` --> pip 10.0.0 (python 3.6)
 - Install virtualenv for python3 (see [Documentation](https://virtualenv.pypa.io/en/stable/) for 
 details).
 - Download source directory:  
