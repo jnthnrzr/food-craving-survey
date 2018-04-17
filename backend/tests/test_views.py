@@ -1,6 +1,6 @@
 import unittest
 
-from app import app
+from application import app
 
 
 class TestViews(unittest.TestCase):

@@ -2,7 +2,7 @@ import unittest
 from datetime import datetime
 from unittest.mock import MagicMock
 
-from app.models import Trial
+from application.models import Trial
 
 
 class TestMockTrialModel(unittest.TestCase):
