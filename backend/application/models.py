@@ -23,9 +23,8 @@ class Rating(db.Model):
     image = db.Column(db.String(16), primary_key=True, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
 
-    __table_args__ = (db.ForeignKeyConstraint([participant_id, session_id],
-                                              [Trial.participant, Trial.session]
-                                              ), {})
+    __table_args__ = (db.ForeignKeyConstraint(
+        [participant_id, session_id], [Trial.participant, Trial.session]), {})
 
     def __repr__(self):     # pragma: no cover
         """Helper function to generate string representation."""
