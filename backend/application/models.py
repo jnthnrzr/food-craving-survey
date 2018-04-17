@@ -12,6 +12,7 @@ class Trial(db.Model):
     ratings = db.relationship("Rating", backref='trial', lazy=True)
 
     def __repr__(self):     # pragma: no cover
+        """Helper function to generate string representation."""
         return f"<Trial {self.participant}, {self.session}>"
 
 
@@ -22,8 +23,20 @@ class Rating(db.Model):
     image = db.Column(db.String(16), primary_key=True, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
 
-    __table_args__ = (db.ForeignKeyConstraint(
-        [participant_id, session_id], [Trial.participant, Trial.session]), {})
+    __table_args__ = (db.ForeignKeyConstraint([participant_id, session_id],
+                                              [Trial.participant, Trial.session]
+                                              ), {})
 
     def __repr__(self):     # pragma: no cover
-        return f'<Rating {self.image}, {self.rating}>'
+        """Helper function to generate string representation."""
+        return f"<Rating {self.image}, {self.rating}>"
+
+
+class Image(db.Model):
+    """A image that will be rated by the participant."""
+    id = db.Column(db.Integer, primary_key=True)
+    filename = db.Column(db.String, nullable=False)
+
+    def __repr__(self):     # pragma: no cover
+        """Helper function to generate string representation."""
+        return f"{self.filename}"
