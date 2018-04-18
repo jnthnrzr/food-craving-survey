@@ -2,7 +2,7 @@ import unittest
 from datetime import datetime
 from unittest.mock import MagicMock
 
-from application.models import Trial
+from application.models import Image, Trial
 
 
 class TestMockTrialModel(unittest.TestCase):
@@ -40,6 +40,28 @@ class TestMockTrialModel(unittest.TestCase):
         label = 'date'
         attributes = dir(self.trial)
         self.assertIn(label, attributes)
+
+
+class TestMockImageModel(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        mock_image = MagicMock(spec=Image)
+        mock_image.id = 99
+        mock_image.filename = "9999.jpg"
+        cls.image = mock_image
+
+    def test_image_instance(self):
+        image = self.image
+        self.assertIsInstance(image, Image)
+
+    def test_filename_label(self):
+        label = 'filename'
+        attributes = dir(self.image)
+        self.assertIn(label, attributes)
+
+    def test_filename_data_type(self):
+        data_type = type(self.image.filename)
+        self.assertIs(data_type, str)
 
 
 if __name__ == "__main__":
