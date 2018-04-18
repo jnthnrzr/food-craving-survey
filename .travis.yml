@@ -16,7 +16,7 @@ before_install:
   - psql -c 'CREATE DATABASE foodcravingsurvey;' -U postgres
 # command to install dependencies
 install:
-    - pip install -r backend/requirements.txt
+    - pip install -r backend/requirements/dev-requirements.txt
 # command to run tests
 script:
     - py.test --cov=./
