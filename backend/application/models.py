@@ -38,4 +38,4 @@ class Image(db.Model):
 
     def __repr__(self):     # pragma: no cover
         """Helper function to generate string representation."""
-        return f"{self.filename}"
+        return f"<Image {self.filename}>"
