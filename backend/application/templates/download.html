@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block head %}
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet"
+          href="{{ url_for('static', filename="css/nouislider.min.css") }}">
+    <link type="text/css" rel="stylesheet"
+          href="{{ url_for('static', filename="css/slider.css") }}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+{% endblock %}
+
+{% block body %}
+    <table class="table table-bordered table-sm">
+        <p>Survey Data for Download</p>
+        <thead class="mdb-color darken-5">
+        <tr class="text-white">
+            <th>Participant ID</th>
+            <th>Session ID</th>
+            <th>Date</th>
+            <th>.csv File</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for r in results %}
+            <tr class="">
+                <td class="align-middle">{{ r.participant }}</td>
+                <td class="align-middle">{{ r.session }}</td>
+                <td class="align-middle">{{ r.date }}</td>
+                <td class="align-middle">
+                    <form action="{{ url_for('download') }}" method="POST">
+                        {{ csrf_token }}
+                        <input type="hidden" name="participant"
+                               value="{{ r.participant }}">
+                        <input type="hidden" name="session"
+                               value="{{ r.session }}">
+                        <button type="submit" value="Download"
+                                class="btn btn-outline-blue">
+                            Download<i class="fa fa-download ml-1"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+{% endblock %}

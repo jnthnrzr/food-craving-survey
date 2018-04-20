@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block head %}
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet"
+          href="{{ url_for('static', filename="css/nouislider.min.css") }}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <link type="text/css" rel="stylesheet"
+          href="{{ url_for('static', filename="css/slider.css") }}">
+{% endblock %}
+{% block body %}
+    <div class="">
+    <p style="font-size: 1.5em;">How much do you crave for this food?</p>
+        <img src="/static/images/{{ filename }}" width=540 height=420>
+    </div>
+{% endblock %}
+{% block slider %}
+    <form method="POST">
+        {{ form.csrf_token }}
+
+        {#        {{ form.rating.label }}#}
+        {#        <div>{{ form.rating }}</div>#}
+        <div id="range"></div>
+        <div class="invisible" style="height: 100px;"></div>
+{#        <div>{{ form.submit(class='btn btn-elegant') }}</div>#}
+        <div>
+            <button type="submit" value="Next" id="next-btn"
+                    class="btn btn-outline-black invisible">
+                Next<i class="fa fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </form>
+    <script type="text/javascript"
+            src="{{ url_for('static', filename="js/nouislider.js") }}">
+    </script>
+    <script type="text/javascript"
+            src="{{ url_for('static', filename="js/slider.js") }}">
+    </script>
+{% endblock %}

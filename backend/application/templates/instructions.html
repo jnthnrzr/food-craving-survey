@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block body %}
+    {% if error %}
+        <p class=error>
+            <strong>Error:</strong>{{ error }}
+        </p>
+    {% endif %}
+
+    <div class="text-left">
+        <p>Welcome to the Food Craving Survey.</p>
+
+        <p>For this task, you will be presented with images of different foods.
+            We are interested to know how much you crave each food at this
+            moment.</p>
+
+        <p>Please rate how much you crave each food right now on a scale of 0
+            (“no craving”) to 100 ("maximum craving”).</p>
+
+        <p>You can click on the slider directly using the mouse or you can drag
+            the handle of the slider into the position that reflects your
+            rating.</p>
+
+        <p>After selecting your rating, click the “Next” button to move on to
+            the next image. Once you have moved to a new image you cannot go
+            back and make changes to your earlier ratings. You will be able to
+            proceed at your own pace, however you should not think too much
+            about each image. Go with your initial response.</p>
+
+        <p>Please rate the food as honestly as possible. You must provide a
+            rating before you can move on to the next image.</p>
+
+        <p>Click “Start” when you are ready to begin.</p>
+
+    </div>
+
+    <form method="POST">
+        {{ csrf_token }}
+        <button type="submit" value="Download"
+                class="btn btn-outline-black btn-lg">
+            Start<i class="fa fa-sign-in ml-2"></i>
+        </button>
+    </form>
+{% endblock %}
