@@ -4,8 +4,8 @@ from application import db
 
 
 class Trial(db.Model):
-    """A case for a participant with a particular session.
-    There might be cases for a single participant having multiple sessions."""
+    """A case for a input_participant with a particular session.
+    There might be cases for a single input_participant having multiple sessions."""
     participant = db.Column(db.Integer, primary_key=True)
     session = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.Date, default=datetime.today())
@@ -13,7 +13,7 @@ class Trial(db.Model):
 
     def __repr__(self):     # pragma: no cover
         """Helper function to generate string representation."""
-        return f"<Trial {self.participant}, {self.session}>"
+        return f"<Trial {self.input_participant}, {self.session}>"
 
 
 class Rating(db.Model):
@@ -32,7 +32,7 @@ class Rating(db.Model):
 
 
 class Image(db.Model):
-    """A image that will be rated by the participant."""
+    """A image that will be rated by the input_participant."""
     id = db.Column(db.Integer, primary_key=True)
     filename = db.Column(db.String, nullable=False)
 
