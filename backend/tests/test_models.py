@@ -19,7 +19,7 @@ class TestMockTrialModel(unittest.TestCase):
         self.assertIsInstance(trial, Trial)
 
     def test_participant_label(self):
-        label = 'participant'
+        label = "participant"
         attributes = dir(self.trial)
         self.assertIn(label, attributes)
 
@@ -32,12 +32,12 @@ class TestMockTrialModel(unittest.TestCase):
         self.assertIs(data_type, int)
 
     def test_session_label(self):
-        label = 'session'
+        label = "session"
         attributes = dir(self.trial)
         self.assertIn(label, attributes)
 
     def test_date_label(self):
-        label = 'date'
+        label = "date"
         attributes = dir(self.trial)
         self.assertIn(label, attributes)
 
@@ -55,7 +55,7 @@ class TestMockImageModel(unittest.TestCase):
         self.assertIsInstance(image, Image)
 
     def test_filename_label(self):
-        label = 'filename'
+        label = "filename"
         attributes = dir(self.image)
         self.assertIn(label, attributes)
 
