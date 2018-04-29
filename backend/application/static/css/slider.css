@@ -1,0 +1,32 @@
+.noUi-value-large {
+    font-size: 1em;
+}
+.noUi-connect {
+    background: #abadaf;
+}
+.noUi-handle-lower:before, .noUi-handle-lower:after {
+    background: none;
+}
+.noUi-handle-lower {
+    border-radius: 100%;
+    background-color: black;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.noUi-base {
+    background-color: #fff;
+}
+.noUi-handle {
+    box-shadow: none;
+    border: #d9d9d9;
+}
+/*.noUi-horizontal.noUi-extended {*/
+	/*padding-right: 32px;*/
+/*}*/
+/*.noUi-horizontal.noUi-extended .noUi-handle {*/
+	/*left: -10px;*/
+/*}*/
+/*.noUi-horizontal.noUi-extended .noUi-origin  {*/
+	/*right: -32px;*/
+/*}*/
