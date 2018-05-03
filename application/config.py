@@ -12,7 +12,7 @@ class Config:
     SESSION_FILE_THRESHOLD = 25
     SESSION_TYPE = 'filesystem'
 
-    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     tracking = os.environ.get("SQLALCHEMY_TRACK_MODIFICATIONS")
     SQLALCHEMY_TRACK_MODIFICATIONS = tracking
 
