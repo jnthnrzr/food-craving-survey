@@ -13,7 +13,7 @@ class Trial(db.Model):
 
     def __repr__(self):     # pragma: no cover
         """Helper function to generate string representation."""
-        return f"<Trial {self.input_participant}, {self.session}>"
+        return f"<Trial {self.participant}, {self.session}>"
 
 
 class Rating(db.Model):
