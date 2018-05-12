@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Food Craving Survey">
-    <meta name="author" content="Jonathan Rozario">
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
-          rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="{{ url_for('static', filename='css/mdb.min.css') }}"
-          rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="{{ url_for('static', filename='css/style.css') }}"
-          rel="stylesheet">
     {% block head %}
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Food Craving Survey">
+        <meta name="author" content="Jonathan Rozario">
+        <!-- Font Awesome -->
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap core CSS -->
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+              rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="{{ url_for('static', filename='css/mdb.min.css') }}"
+              rel="stylesheet">
+        <!-- Your custom styles (optional) -->
+        <link href="{{ url_for('static', filename='css/style.css') }}"
+              rel="stylesheet">
         <title>Food Craving Survey</title>
     {% endblock %}
 </head>
 <body class="white">
+{% block nav %}{% endblock %}
 <main>
     <!--Main container-->
     <div class="container.fluid">
@@ -40,7 +41,7 @@
             </div>
         </div>
         <!--Grid row-->
-     </div>
+    </div>
     <div class="container.fluid">
         <!--Grid row-->
         <div class="row align-items-center">
@@ -50,10 +51,10 @@
                         </span>
             </div>
             <div class="col-10 offset-1">
-                        {% block slider %}{% endblock %}
+                {% block slider %}{% endblock %}
             </div>
             <div class="col-8 offset-2">
-                        {% block sliderbutton %}{% endblock %}
+                {% block sliderbutton %}{% endblock %}
             </div>
         </div>
         <!--Grid row-->

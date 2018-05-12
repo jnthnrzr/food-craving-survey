@@ -34,6 +34,9 @@ def manage_data():                          # pragma: no cover
         session["rating"] = request.get_json().get("rating", None)
     return render_template("base.html")
 
+@app.route("/index")
+def index():
+    return render_template("navbar.html")
 
 @app.route("/", methods=["GET", "POST"])
 def input_participant():

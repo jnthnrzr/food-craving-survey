@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <link href="{{ url_for('static', filename='css/style-navbar.css') }}"
+          rel="stylesheet">
+{% endblock %}
+{% block nav %}
+    <nav class="navbar">
+        <div class="container">
+            <div class="row">
+                <div class="columns">
+                    <a href="#">Food Craving Survey</a>
+                </div>
+                <div class="start"><a href="/">Start</a></div>
+                <div id="download" style="animation: ease-in;">
+                    <a href="#">Download Data</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
