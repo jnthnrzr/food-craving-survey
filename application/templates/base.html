@@ -30,7 +30,7 @@
     <div class="container.fluid">
         <!--Grid row-->
         <div id="messages" class="row align-items-center">
-            <div class="col-8 offset-2">
+            <div class="col-8 offset-2 text-center" style="margin-top: 25px;">
                 {% if get_flashed_messages() %}
                     {% for message in get_flashed_messages() %}
                         <div class="animated rubberBand">
@@ -45,9 +45,9 @@
     <div class="container.fluid">
         <!--Grid row-->
         <div class="row align-items-center">
-            <div class="col-8 offset-2 text-center">
+            <div class="col-8 offset-2 text-center main">
                         <span class="align-middle">
-                            {% block body %}{% endblock %}
+                            {% block main %}{% endblock %}
                         </span>
             </div>
             <div class="col-10 offset-1">
@@ -61,9 +61,19 @@
     </div>
     <!--Main container-->
 </main>
-
-<footer>
-
+<style>
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+    text-align: center;
+}
+</style>
+<footer class="footer-copyright dark py-3">
+    <p>Made with <span style="color: #e25555;">&#9829;</span> by Jonathan
+        Rozario</p>
 </footer>
 
 <!-- SCRIPTS -->
