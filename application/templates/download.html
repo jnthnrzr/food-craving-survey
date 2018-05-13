@@ -1,5 +1,6 @@
-{% extends "base.html" %}
+{% extends "navbar.html" %}
 {% block head %}
+    {{ super() }}
     <meta charset="UTF-8">
     <link type="text/css" rel="stylesheet"
           href="{{ url_for('static', filename="css/nouislider.min.css") }}">
@@ -9,9 +10,9 @@
     </script>
 {% endblock %}
 
-{% block body %}
+{% block main %}
     <table class="table table-bordered table-sm">
-        <p>Survey Data for Download</p>
+        <p style="margin-top: 25px;">Survey Data for Download</p>
         <thead class="mdb-color darken-5">
         <tr class="text-white">
             <th>Participant ID</th>

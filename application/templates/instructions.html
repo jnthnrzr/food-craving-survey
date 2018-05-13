@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block body %}
+{% block main %}
     {% if error %}
         <p class=error>
             <strong>Error:</strong>{{ error }}
         </p>
     {% endif %}
 
-    <div class="text-left">
+    <div class="text-left" style="margin-top:100px;">
         <p>Welcome to the Food Craving Survey.</p>
 
         <p>For this task, you will be presented with images of different foods.

@@ -1,5 +1,5 @@
-{% extends "base.html" %}
-{% block body %}
+{% extends "navbar.html" %}
+{% block main %}
     {% if error %}
         <p class=error><strong>Error:</strong> {{ error }}
     {% endif %}
@@ -11,8 +11,5 @@
     <p>
         Thank you for participating in this study.
     </p>
-    <form method="POST">
-        {{ csrf_token }}
-    </form>
     </div>
 {% endblock %}
