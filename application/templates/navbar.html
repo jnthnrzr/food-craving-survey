@@ -8,8 +8,6 @@
     <nav class="navbar navbar-dark black justify-content-between">
         <a class="navbar-brand" href="{{ url_for("index") }}">Food
             Craving Survey</a>
-        <a href="{{ url_for("input_participant") }}"
-           onclick="">Start</a>
-        <a class="white-text" href="{{ url_for("download") }}">Download Data</a>
+        <a class="white-text" href="{{ url_for("download") }}"><i class="fa fa-download ml-1"></i></a>
     </nav>
 {% endblock %}
