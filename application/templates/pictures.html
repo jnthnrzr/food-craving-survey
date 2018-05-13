@@ -1,29 +1,27 @@
-{% extends "base.html" %}
+{% extends "navbar.html" %}
 {% block head %}
+    {{ super() }}
     <meta charset="UTF-8">
     <link type="text/css" rel="stylesheet"
           href="{{ url_for('static', filename="css/nouislider.min.css") }}">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <link type="text/css" rel="stylesheet"
           href="{{ url_for('static', filename="css/slider.css") }}">
 {% endblock %}
-{% block body %}
-    <div class="">
-    <p style="font-size: 1.5em;">How much do you crave for this food?</p>
-        <img src="/static/images/{{ filename }}" width=540 height=420>
+{% block main %}
+    <div style="margin-top: 50px;">
+    <p style="font-size: 1.5em; margin-bottom:0;">How much do you crave for
+        this food?</p>
+        <img class="img-fluid" src="/static/images/{{ filename }}" width=540 height=420
+             style="margin-top: 75px;">
     </div>
 {% endblock %}
 {% block slider %}
-    <form method="POST">
+    <form method="POST" style="margin-top: 75px;">
         {{ form.csrf_token }}
-
-        {#        {{ form.rating.label }}#}
-        {#        <div>{{ form.rating }}</div>#}
         <div id="range"></div>
-        <div class="invisible" style="height: 100px;"></div>
-{#        <div>{{ form.submit(class='btn btn-elegant') }}</div>#}
-        <div>
+        <div class="row justify-content-center" style="margin-top: 90px;">
             <button type="submit" value="Next" id="next-btn"
                     class="btn btn-outline-black invisible">
                 Next<i class="fa fa-arrow-right ml-2"></i>
