@@ -53,7 +53,7 @@ range.noUiSlider.on('update', function (values, handle) {
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
-        url: "/get",
+        url: "/api",
         data: JSON.stringify({ rating: values[handle] }),
         success: function (data) {},
         dataType: "json"

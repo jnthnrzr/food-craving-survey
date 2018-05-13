@@ -25,7 +25,7 @@ def dated_url_for(endpoint, **values):      # pragma: no cover
     return url_for(endpoint, **values)
 
 
-@app.route("/get", methods=["GET", "POST"])
+@app.route("/api", methods=["GET", "POST"])
 def manage_data():                          # pragma: no cover
     """Show the data collected so far."""
     result = [(k, v) for k, v in session.items()]
@@ -34,11 +34,13 @@ def manage_data():                          # pragma: no cover
         session["rating"] = request.get_json().get("rating", None)
     return render_template("base.html")
 
-@app.route("/index")
+
+@app.route("/")
 def index():
     return render_template("navbar.html")
 
-@app.route("/", methods=["GET", "POST"])
+
+@app.route("/participant", methods=["GET", "POST"])
 def input_participant():
     """Show the input_participant input page."""
     label = "Enter the participant number:"
@@ -120,8 +122,6 @@ def pictures():
 @app.route("/finish", methods=["GET", "POST"])
 def finish():
     """Show the survey finish page."""
-    # if request.method == "POST":
-    #     return redirect(url_for("landing"))
     return render_template("finish.html")
 
 
