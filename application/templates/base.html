@@ -21,16 +21,30 @@
         <link href="{{ url_for('static', filename='css/style.css') }}"
               rel="stylesheet">
         <title>Food Craving Survey</title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+
+            .container {
+                width: 80%;
+                min-height: 100%;
+                position: relative;
+            }
+        </style>
     {% endblock %}
 </head>
+
 <body class="white">
 {% block nav %}{% endblock %}
+
 <main>
-    <!--Main container-->
-    <div class="container.fluid">
-        <!--Grid row-->
+    <div class="container">
         <div id="messages" class="row align-items-center">
-            <div class="col-8 offset-2 text-center" style="margin-top: 25px;">
+            <div class="text-center" style="margin-top: 25px;">
                 {% if get_flashed_messages() %}
                     {% for message in get_flashed_messages() %}
                         <div class="animated rubberBand">
@@ -40,10 +54,8 @@
                 {% endif %}
             </div>
         </div>
-        <!--Grid row-->
     </div>
-    <div class="container.fluid">
-        <!--Grid row-->
+    <div class="container">
         <div class="row align-items-center">
             <div class="col-8 offset-2 text-center main">
                         <span class="align-middle">
@@ -57,22 +69,11 @@
                 {% block sliderbutton %}{% endblock %}
             </div>
         </div>
-        <!--Grid row-->
     </div>
-    <!--Main container-->
 </main>
-<style>
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    font-size: 0.9rem;
-    text-align: center;
-}
-</style>
-<footer class="footer-copyright dark py-3">
-    <p>Made with <span style="color: #e25555;">&#9829;</span> by Jonathan
+
+<footer class="footer-copyright dark small py-3 text-center">
+    <p>Made with <span style="color: #e25555;">&hearts;</span> by Jonathan
         Rozario</p>
 </footer>
 
