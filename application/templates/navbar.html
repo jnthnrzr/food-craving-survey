@@ -1,13 +1,34 @@
-{% extends "base.html" %}
 {% block head %}
-    {{ super() }}
-    {#    <link href="{{ url_for('static', filename='css/style-navbar.css') }}"#}
-    {#          rel="stylesheet">#}
+    super()
+    <style>
+        .navbar:not(.top-nav-collapse) {
+            background: rgba(0, 65, 106, 0.95) !important;
+        }
+
+        @media (max-width: 768px) {
+            .navbar:not(.top-nav-collapse) {
+                background: rgba(0, 65, 106, 0.95) !important;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: rgba(0, 65, 106, 0.95) !important;
+            }
+        }
+    </style>
 {% endblock %}
-{% block nav %}
-    <nav class="navbar navbar-dark black justify-content-between">
-        <a class="navbar-brand" href="{{ url_for("index") }}">Food
-            Craving Survey</a>
-        <a class="white-text" href="{{ url_for("download") }}"><i class="fa fa-download ml-1"></i></a>
-    </nav>
-{% endblock %}
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top
+    justify-content-between">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url_for("index") }}">
+            Food Craving Survey
+        </a>
+        <a class="nav-item nav-link white-text"
+           href="{{ url_for("download") }}">
+            <i class="fa fa-download ml-1"></i> Download
+        </a>
+    </div>
+</nav>
+<!-- Navbar -->
