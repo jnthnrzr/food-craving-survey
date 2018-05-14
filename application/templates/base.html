@@ -22,11 +22,16 @@
               rel="stylesheet">
         <title>Food Craving Survey</title>
         <style>
-            html,
-            body {
+            html, body {
                 margin: 0;
                 padding: 0;
                 height: 100%;
+            }
+
+            @media (max-width: 740px) {
+                html, body {
+                    height: 100vh;
+                }
             }
 
             .container {
@@ -34,12 +39,45 @@
                 min-height: 100%;
                 position: relative;
             }
+
+            .navbar:not(.top-nav-collapse) {
+                background: rgba(0, 65, 106, 0.95) !important;
+            }
+
+            @media (max-width: 768px) {
+                .navbar:not(.top-nav-collapse) {
+                    background: rgba(0, 65, 106, 0.95) !important;
+
+                }
+            }
+
+            @media (min-width: 800px) and (max-width: 850px) {
+                .navbar:not(.top-nav-collapse) {
+                    background: rgba(0, 65, 106, 0.95) !important;
+                }
+            }
         </style>
     {% endblock %}
 </head>
 
 <body class="white">
-{% block nav %}{% endblock %}
+<header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top
+    justify-content-between">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for("index") }}">
+                Food Craving Survey
+            </a>
+            <a class="nav-item nav-link white-text"
+               href="{{ url_for("download") }}">
+                <i class="fa fa-download ml-1"></i> Download
+            </a>
+        </div>
+    </nav>
+    <!-- Navbar -->
+    {% block intro %}{% endblock %}
+</header>
 
 {% block content %}
 <main>
