@@ -21,6 +21,11 @@
     box-shadow: none;
     border: #d9d9d9;
 }
+#range {
+    width:100% !important;
+    margin: 0 auto;
+    padding: 0 auto;
+}
 /*.noUi-horizontal.noUi-extended {*/
 	/*padding-right: 32px;*/
 /*}*/
