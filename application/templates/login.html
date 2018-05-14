@@ -1,10 +1,19 @@
 {% extends "base.html" %}
-{% block content %}
+{% block main %}
     <form method="POST" style="margin-top: 5rem;">
 
         {{ form.csrf_token }}
         <div class="row justify-content-center">
             <div class="row justify-content-center">
+                {% if get_flashed_messages() %}
+                    {% for message in get_flashed_messages() %}
+                        <div class="animated rubberBand">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        <div class="row justify-content-center">
                 {{ label }}
             </div>
                 <div class="row justify-content-center">
