@@ -37,7 +37,7 @@ def manage_data():                          # pragma: no cover
 
 @app.route("/")
 def index():
-    return render_template("navbar.html")
+    return render_template("index.html")
 
 
 @app.route("/participant", methods=["GET", "POST"])
