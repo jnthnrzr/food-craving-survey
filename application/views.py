@@ -29,7 +29,6 @@ def dated_url_for(endpoint, **values):      # pragma: no cover
 def manage_data():                          # pragma: no cover
     """Show the data collected so far."""
     result = [(k, v) for k, v in session.items()]
-    flash(result)
     if request.method == "POST":
         session["rating"] = request.get_json().get("rating", None)
     return render_template("base.html")
@@ -76,7 +75,6 @@ def input_session():
                           date=datetime.today())
                 db.session.add(t)
                 db.session.commit()
-                flash("Participant and session recorded.")
                 return redirect(url_for("instructions"))
         else:
             for error in form.number.errors:
