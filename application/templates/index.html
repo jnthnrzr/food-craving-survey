@@ -1,7 +1,24 @@
-{% extends "base.html" %}
-{% block head %}
-    super()
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Food Craving Survey">
+    <meta name="author" content="Jonathan Rozario">
     <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+          rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{{ url_for('static', filename='css/mdb.min.css') }}"
+          rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{{ url_for('static', filename='css/style.css') }}"
+          rel="stylesheet">
+    <title>Food Craving Survey</title>
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -12,25 +29,34 @@
           rel="stylesheet">
     <style>
         /* Required for full background image */
-        header, .view {
+
+        html,
+        body,
+        header,
+        .view {
             height: 100%;
         }
 
         @media (max-width: 740px) {
-            header, .view {
+            html,
+            body,
+            header,
+            .view {
                 height: 100vh;
             }
         }
 
+        .top-nav-collapse {
+            background-color: #563e91 !important;
+        }
+
         .navbar:not(.top-nav-collapse) {
-            background: rgba(0, 65, 106, 0.95) !important;
+            background: transparent !important;
         }
 
         @media (max-width: 768px) {
             .navbar:not(.top-nav-collapse) {
-                {#background: #563e91 !important;#}
                 background: rgba(0, 65, 106, 0.95) !important;
-
             }
         }
 
@@ -46,9 +72,32 @@
             background: linear-gradient(45deg, rgba(180, 199, 240, 0.8), rgba(0, 65, 196, 0.85) 65%);
         }
     </style>
-{% endblock %}
+    <style type="text/css">/* Chart.js */
+    @-webkit-keyframes chartjs-render-animation {
+        from {
+            opacity: 0.99
+        }
+        to {
+            opacity: 1
+        }
+    }
 
-{% block intro %}
+    @keyframes chartjs-render-animation {
+        from {
+            opacity: 0.99
+        }
+        to {
+            opacity: 1
+        }
+    }
+
+    .chartjs-render-monitor {
+        -webkit-animation: chartjs-render-animation 0.001s;
+        animation: chartjs-render-animation 0.001s;
+    }</style>
+</head>
+
+<body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top
     justify-content-between">
@@ -58,7 +107,7 @@
             </a>
             <a class="nav-item nav-link white-text"
                href="{{ url_for("download") }}">
-                <i class="fa fa-download ml-1"></i>
+                Data <i class="fa fa-download ml-1"></i>
             </a>
         </div>
     </nav>
@@ -80,7 +129,7 @@
                     <!--Grid column-->
                     <div class="col-md-12 text-center white-text">
                         <h1 class="display-4 font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInUp">
-                            Pick Your Next Meal Course</h1>
+                            Pick Your Next Meal</h1>
                         <h5 class="pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 wow fadeInUp"
                             data-wow-delay="0.2s">
                             We will get you what you want the most!</h5>
@@ -100,4 +149,5 @@
         <!-- Mask & flexbox options-->
     </div>
     <!-- Full Page Intro -->
-{% endblock %}
+</body>
+</html>
