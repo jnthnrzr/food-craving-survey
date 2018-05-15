@@ -8,15 +8,22 @@
           href="{{ url_for('static', filename="css/slider.css") }}">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script>
+    <style>
+    table {
+        max-width: 740px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
 {% endblock %}
 
 {% block main %}
-    <table class="table table-bordered table-sm">
-        <p style="margin-top: 25px;">Survey Data for Download</p>
+    <div class="table-responsive">
+    <table class="table" style="margin: 0 auto; max-width:700px;">
         <thead class="mdb-color darken-5">
         <tr class="text-white">
-            <th>Participant ID</th>
-            <th>Session ID</th>
+            <th>Participant</th>
+            <th>Session</th>
             <th>Date</th>
             <th>.csv File</th>
         </tr>
@@ -35,8 +42,8 @@
                         <input type="hidden" name="session"
                                value="{{ r.session }}">
                         <button type="submit" value="Download"
-                                class="btn btn-outline-blue">
-                            Download<i class="fa fa-download ml-1"></i>
+                                class="btn btn-sm btn-outline-blue">
+                           Data <i class="fa fa-download ml-1"></i>
                         </button>
                     </form>
                 </td>
@@ -44,4 +51,5 @@
             </tbody>
         {% endfor %}
     </table>
+    </div>
 {% endblock %}
