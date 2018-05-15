@@ -71,6 +71,19 @@
             background: -webkit-linear-gradient(45deg, rgba(180, 199, 240, 0.8), rgba(0, 65, 196, 0.85) 65%);
             background: linear-gradient(45deg, rgba(180, 199, 240, 0.8), rgba(0, 65, 196, 0.85) 65%);
         }
+
+        .footer {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 1rem;
+            background-color: #efefef;
+            text-align: center;
+        }
+        #hearts {
+            color: #e25555;
+        }
     </style>
     <style type="text/css">/* Chart.js */
     @-webkit-keyframes chartjs-render-animation {
@@ -132,8 +145,9 @@
                             Pick Your Next Meal</h1>
                         <h5 class="pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 wow fadeInUp"
                             data-wow-delay="0.2s">
-                            We will get you what you want the most!</h5>
-                        <div class="wow fadeInUp" data-wow-delay="0.4s">
+                            We'll serve what you crave the most!</h5>
+                        <div class="wow fadeInUp" data-wow-delay="0.4s"
+                        style="padding-bottom: 50px;">
                             <a style="border-radius: 8px;"
                                href="{{ url_for("input_participant") }}"
                                class="btn btn-lg btn-success btn-rounded">
@@ -149,5 +163,8 @@
         <!-- Mask & flexbox options-->
     </div>
     <!-- Full Page Intro -->
+    <footer class="footer-copyright footer dark small py-3 text-center">
+        <p>Made with <span id="hearts">&hearts;</span> by Jonathan Rozario</p>
+    </footer>
 </body>
 </html>
