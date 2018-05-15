@@ -51,8 +51,9 @@ def input_participant():
             session["p_num"] = f"{data}"
             form.number.data = ""
             return redirect(url_for("input_session"))
-        for error in form.number.errors:
-            flash(error)
+        # for error in form.number.errors:
+        #     if not error.startswith(""):
+        #         flash(error)
     return render_template("login.html", form=form, label=label)
 
 
