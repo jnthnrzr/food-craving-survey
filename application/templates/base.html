@@ -79,7 +79,7 @@
             </a>
             <a class="nav-item nav-link white-text"
                href="{{ url_for("download") }}" title="Download Data">
-                <i class="fa fa-download ml-1"></i>
+                Data <i class="fa fa-download ml-1"></i>
             </a>
         </div>
     </nav>
@@ -90,12 +90,7 @@
 {% block content %}
 <main id="main">
     <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-8 offset-2 text-center main">
-                        <span class="align-middle">
-                            {% block main %}{% endblock %}
-                        </span>
-            </div>
+        {% block main %}{% endblock %}
             <div class="col-10 offset-1">
                 {% block slider %}{% endblock %}
             </div>
@@ -103,7 +98,7 @@
                 {% block sliderbutton %}{% endblock %}
             </div>
         </div>
-    </div>
+{#    </div>#}
 </main>
 {% endblock %}
 

@@ -4,28 +4,26 @@
 
         {{ form.csrf_token }}
         <div class="row justify-content-center">
-            <div class="row justify-content-center">
-                {% if get_flashed_messages() %}
-                    {% for message in get_flashed_messages() %}
-                        <div class="animated rubberBand">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            </div>
+            {% if get_flashed_messages() %}
+                {% for message in get_flashed_messages() %}
+                    <div class="animated rubberBand red-text">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
         <div class="row justify-content-center">
-                {{ label }}
-            </div>
-                <div class="row justify-content-center">
-                {{ form.number(class="text-center w-25") }}
-            </div>
+            {{ label }}
+        </div>
+        <div class="row justify-content-center">
+            {{ form.number(class="text-center w-25") }}
         </div>
 
         <div class="row justify-content-center" style="margin-top: 3rem;">
-                <button type="submit" value="Download"
-                        class="btn btn-outline-black">
-                    Next<i class="fa fa-arrow-right ml-2"></i>
-                </button>
+            <button type="submit" value="Download"
+                    class="btn btn-outline-black">
+                Next<i class="fa fa-arrow-right ml-2"></i>
+            </button>
         </div>
     </form>
 {% endblock %}

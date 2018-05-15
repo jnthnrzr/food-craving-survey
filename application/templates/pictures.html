@@ -12,16 +12,32 @@
     #next-btn {
         margin-top: 65px;
     }
+
+    #food-pic {
+        width: 100%;
+        max-width: 640px;
+        height: auto;
+        display:block;
+        margin: 0 auto;
+    }
+
     </style>
 {% endblock %}
 {% block main %}
-    <div>
+    <div class="row justify-content-center">
         <p>How much do you crave for this food?</p>
-        <img class="img-fluid" src="/static/images/{{ filename }}">
+    </div>
+    <div class="middle">
+        <img id="food-pic"
+ src="/static/food-pics/808_39156131470_5845295a1e_c_640_480_nofilter.jpg" />
+
+{#        <img class="img-fluid" src="/static/images/{{ filename }}">#}
+{#          <img class="justify-content-center img-fluid"#}
+{#               src="https://loremflickr.com/640/480/lunch?lock=1" />#}
     </div>
 {% endblock %}
 {% block slider %}
-    <form method="POST" style="margin-top: 75px;">
+    <form method="POST" style="padding-top: 35px;">
         {{ form.csrf_token }}
         <div id="range"></div>
         <div class="row justify-content-center">

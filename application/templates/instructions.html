@@ -1,12 +1,7 @@
 {% extends "base.html" %}
 {% block main %}
-    {% if error %}
-        <p class=error>
-            <strong>Error:</strong>{{ error }}
-        </p>
-    {% endif %}
-
-    <div class="text-left">
+    <div class="container justify-content-center">
+    <div class="row">
         <p>Welcome to the Food Craving Survey.</p>
 
         <p>For this task, you will be presented with images of different foods.
@@ -32,7 +27,7 @@
         <p>Click “Start” when you are ready to begin.</p>
 
     </div>
-
+    <div class="row justify-content-center">
     <form method="POST">
         {{ csrf_token }}
         <button type="submit" value="Download"
@@ -40,4 +35,6 @@
             Start<i class="fa fa-sign-in ml-2"></i>
         </button>
     </form>
+    </div>
+    </div>
 {% endblock %}
