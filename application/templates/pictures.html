@@ -8,23 +8,9 @@
     </script>
     <link type="text/css" rel="stylesheet"
           href="{{ url_for('static', filename="css/slider.css") }}">
-    <style>
-    #next-btn {
-        margin-top: 65px;
-    }
-
-    #food-pic {
-        width: 100%;
-        max-width: 640px;
-        height: auto;
-        display:block;
-        margin: 0 auto;
-    }
-
-    </style>
 {% endblock %}
 {% block main %}
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="margin-top:25px;">
         <p>How much do you crave for this food?</p>
     </div>
     <div class="middle">
@@ -33,7 +19,7 @@
     </div>
 {% endblock %}
 {% block slider %}
-    <form method="POST" style="padding-top: 35px;">
+    <form method="POST" style="padding-top: 30px;">
         {{ form.csrf_token }}
         <div id="range"></div>
         <div class="row justify-content-center">
