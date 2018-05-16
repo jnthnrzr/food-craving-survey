@@ -1,31 +1,44 @@
 {% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <style>
+        @media (max-width: 576px) {
+            #instructions {
+                width: 95%;
+                margin: 12px auto;
+                font-size: 1.2rem;
+            }
+        }
+        @media (min-width: 576px) and (max-width: 800px) {
+            #instructions {
+                width: 80%;
+                margin: 150px auto 50px auto;
+                font-size: 1.4rem;
+            }
+        }
+        @media (min-width: 800px) {
+            #instructions {
+                width: 90%;
+                font-size: 1.5rem;
+                margin-top: 150px;
+                margin-bottom: 75px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+{% endblock %}
 {% block main %}
-    <div class="container justify-content-center">
-    <div class="row">
-        <p>Welcome to the Food Craving Survey.</p>
-
-        <p>For this task, you will be presented with images of different foods.
-            We are interested to know how much you crave each food at this
-            moment.</p>
+    <div class="container">
+    <div class="text-left" id="instructions">
+        <p class="text-center">Welcome!</p>
 
         <p>Please rate how much you crave each food right now on a scale of 0
             (“no craving”) to 100 ("maximum craving”).</p>
 
-        <p>You can click on the slider directly using the mouse or you can drag
-            the handle of the slider into the position that reflects your
-            rating.</p>
+        <p>Press “Next” to move on to the next image.</p>
 
-        <p>After selecting your rating, click the “Next” button to move on to
-            the next image. Once you have moved to a new image you cannot go
-            back and make changes to your earlier ratings. You will be able to
-            proceed at your own pace, however you should not think too much
-            about each image. Go with your initial response.</p>
-
-        <p>Please rate the food as honestly as possible. You must provide a
-            rating before you can move on to the next image.</p>
-
-        <p>Click “Start” when you are ready to begin.</p>
-
+        <p>Press “Start” when you are ready to begin.</p>
     </div>
     <div class="row justify-content-center">
     <form method="POST">
