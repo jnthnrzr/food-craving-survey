@@ -1,11 +1,10 @@
 language: python
 python:
-    - "3.6.1"
+    - "3.7.0"
 # cache folders:
 cache:
   directories:
     - $HOME/.cache/pip
-    - $HOME/virtualenv/python3.6.1/lib/python3.6/site-packages
 # sudo permission:
 sudo: false
 services:
@@ -16,7 +15,8 @@ before_install:
   - psql -c 'CREATE DATABASE foodcravingsurvey;' -U postgres
 # command to install dependencies
 install:
-    - pip install -r backend/requirements/dev-requirements.txt
+    - pip install pipenv
+    - pipenv install
 # command to run tests
 script:
     - py.test --cov=./
