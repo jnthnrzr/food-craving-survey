@@ -1,10 +1,11 @@
 language: python
 python:
-    - "3.7"
+    - "3.6.1"
 # cache folders:
 cache:
   directories:
     - $HOME/.cache/pip
+    - $HOME/virtualenv/python3.6.1/lib/python3.6/site-packages
 # sudo permission:
 sudo: false
 services:
@@ -16,7 +17,7 @@ before_install:
 # command to install dependencies
 install:
     - pip install pipenv
-    - pipenv install
+    - pipenv install --python 3
 # command to run tests
 script:
     - py.test --cov=./
